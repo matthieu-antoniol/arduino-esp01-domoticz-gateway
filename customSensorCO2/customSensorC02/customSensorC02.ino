@@ -59,10 +59,10 @@ void loop() {
   JsonObject sensorList = requestToSend.createNestedObject("sensors");
   measureReadyToSend = false;
   if (!calibrationAirSensor@domoticzSensorIDX@) {
-    JsonObject MoistureSensor@domoticzSensorIDX@ = sensorList.createNestedObject("@domoticzSensorIDX@");
+    JsonObject AirQuality@domoticzSensorIDX@ = sensorList.createNestedObject("@domoticzSensorIDX@");
     float outputValueAirSensor@domoticzSensorIDX@ = gasAirSensor@domoticzSensorIDX@.getPPM();
-    AirQuality147["type"] = typeAirSensor@domoticzSensorIDX@;
-    AirQuality147["value"] = String(outputValueAirSensor@domoticzSensorIDX@, 1);
+    AirQuality@domoticzSensorIDX@["type"] = typeAirSensor@domoticzSensorIDX@;
+    AirQuality@domoticzSensorIDX@["value"] = String(outputValueAirSensor@domoticzSensorIDX@, 1);
 
     measureReadyToSend = true;
   } else {
